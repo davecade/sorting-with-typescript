@@ -20,6 +20,9 @@ class Sorter {
 
                 //-- if collection is a string, do this
                 //-- compare and swap in string
+                if(typeof this.collection === 'string') {
+                    
+                }
             }
         }
     }
