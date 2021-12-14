@@ -1,4 +1,3 @@
-import { NumbersCollection } from "./NumbersCollection"
 
 export class CharactersCollecti9on {
 
