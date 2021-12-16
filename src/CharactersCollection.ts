@@ -1,4 +1,5 @@
 
+//-- class for string data
 export class CharactersCollecti9on {
 
     constructor(public data: string) {}
