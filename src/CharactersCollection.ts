@@ -1,6 +1,6 @@
 
 //-- class for string data
-export class CharactersCollecti9on {
+export class CharactersCollection {
 
     constructor(public data: string) {}
 
