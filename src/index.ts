@@ -2,12 +2,13 @@ import { Sorter } from "./sorter";
 import { NumbersCollection } from "./NumbersCollection";
 import { CharactersCollection } from "./CharactersCollection";
 
+//-- Numbers data for sorting
 const numbersCollection = new NumbersCollection([10, 3, -5, 0, 2])
 const sortNumbers = new Sorter(numbersCollection)
 sortNumbers.sort();
 console.log(numbersCollection.data)
 
-
+//-- string data for sorting
 const charactersCollection = new CharactersCollection('daveisthebest')
 const sortCharacters = new Sorter(charactersCollection)
 sortCharacters.sort();
