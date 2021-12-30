@@ -6,7 +6,7 @@ class Node {
 export class LinkedList {
     head: Node | null = null;
 
-    constructor(head: Node) {
+    constructor(head: Node | null = null) {
         this.head = head;
     }
 
