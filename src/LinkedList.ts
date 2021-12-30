@@ -16,7 +16,7 @@ export class LinkedList {
             this.head = node;
             return;
         } else {
-            //-- Iterate to last node, then add node
+            //-- Iterate to last node, then add node at the end
             let pointer = this.head;
             while (pointer.next) {
                 pointer = pointer.next;
@@ -50,13 +50,42 @@ export class LinkedList {
         let pointer: Node | null = this.head;
 
         while (pointer) {
-            if(currentIndex === targetIndex) {
-                return pointer
+            if (currentIndex === targetIndex) {
+                return pointer;
             }
-            currentIndex++
+            currentIndex++;
             pointer = pointer.next;
         }
 
-        throw new Error('Index out of bounds')
+        throw new Error("Index out of bounds");
+    }
+
+    compare(leftIndex: number, rightIndex: number): boolean {
+        if (!this.head) {
+            throw new Error("List is empty");
+        }
+
+        return this.at(leftIndex).data > this.at(rightIndex).data;
+    }
+
+    swap(leftIndex: number, rightIndex: number): void {
+        const leftNode = this.at(leftIndex);
+        const rightNode = this.at(rightIndex);
+
+        const leftHand = leftNode.data;
+        leftNode.data = rightNode.data;
+        rightNode.data = leftHand;
+    }
+
+    print(): void {
+        if(!this.head) {
+            return;
+        }
+
+        let pointer: Node | null = this.head
+        while(pointer) {
+            console.log(pointer.data)
+            pointer = pointer.next
+        }
     }
 }
