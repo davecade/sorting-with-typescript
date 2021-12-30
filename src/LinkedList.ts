@@ -25,4 +25,19 @@ export class LinkedList {
             pointer.next = node;
         }
     }
+
+    get length(): number {
+        let count = 0
+        
+        if(this.head) {
+            count++
+            let pointer = this.head
+            while(pointer.next) {
+                count++
+                pointer = pointer.next
+            }
+        }
+
+        return count
+    }
 }
