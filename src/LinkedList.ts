@@ -27,17 +27,36 @@ export class LinkedList {
     }
 
     get length(): number {
-        let count = 0
-        
-        if(this.head) {
-            count++
-            let pointer = this.head
-            while(pointer.next) {
-                count++
-                pointer = pointer.next
+        let count = 0;
+
+        if (this.head) {
+            count++;
+            let pointer = this.head;
+            while (pointer.next) {
+                count++;
+                pointer = pointer.next;
             }
         }
 
-        return count
+        return count;
+    }
+
+    at(targetIndex: number): Node {
+        if (!this.head) {
+            throw new Error("index out of bounds");
+        }
+
+        let currentIndex = 0;
+        let pointer: Node | null = this.head;
+
+        while (pointer) {
+            if(currentIndex === targetIndex) {
+                return pointer
+            }
+            currentIndex++
+            pointer = pointer.next;
+        }
+
+        throw new Error('Index out of bounds')
     }
 }
